@@ -22,3 +22,11 @@ Route::get('curso', function () {
     //return view('welcome');
     return "Bienvenido a la sección de cursos";
 });
+
+Route::get('curso/create', function () {
+    return "En esta página podras crear un curso";
+});
+
+Route::get('curso/{curso}',function($curso){
+    return "Bienvenido al curso de: ".$curso;
+});
