@@ -18,15 +18,25 @@ Route::get('/', function () {
     return "Bienvenido a la página principal :)";
 });
 
-Route::get('curso', function () {
+Route::get('cursos', function () {
     //return view('welcome');
     return "Bienvenido a la sección de cursos";
 });
 
-Route::get('curso/create', function () {
+Route::get('cursos/create', function () {
     return "En esta página podras crear un curso";
 });
 
-Route::get('curso/{curso}',function($curso){
+/*Route::get('curso/{curso}',function($curso){
     return "Bienvenido al curso de: ".$curso;
+}); */
+
+Route::get('cursos/{curso}/{categoria?}', function ($curso,$categoria=NULL) {
+    if($categoria){
+        return "Bienvenido al curso $curso de la categoria $categoria";
+    }
+    else{
+        return "Bienvenido al curso de ".$curso;
+    }
+
 });
